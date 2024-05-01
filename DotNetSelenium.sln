@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34322.80
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HerokuApp", "DotNetSelenium\HerokuApp.csproj", "{0DFD794F-F220-444F-90C8-710C57A67797}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoQA", "DemoQA\DemoQA.csproj", "{6E98CAB5-7E52-402A-99BA-7A9C7C505BC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CandyMapper-WebUI", "CandyMapper-WebUI", "{099C660F-9A62-42B9-956C-9BF1F14B8FDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CandyMapper-WebUI", "CandyMapper-WebUI\CandyMapper-WebUI.csproj", "{EEE7BC38-4EB6-41C4-B9A0-7B97497F6CBE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HerokuApp", "HerokuApp", "{BA162EA3-E390-48A3-B2DF-E2C155841C67}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DemoQA", "DemoQA", "{61ECA0F0-E0B1-44BD-9E02-0116FA94A524}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SWag Labs-Online Shop Simulation", "SWag Labs-Online Shop Simulation", "{6CB94B41-BD74-4567-A7DB-724DB83595F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DemoBlaze-ECommerce", "DemoBlaze-ECommerce", "{01D53F91-1048-4D86-BF59-BBC500902D31}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DFD794F-F220-444F-90C8-710C57A67797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DFD794F-F220-444F-90C8-710C57A67797}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DFD794F-F220-444F-90C8-710C57A67797}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DFD794F-F220-444F-90C8-710C57A67797}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E98CAB5-7E52-402A-99BA-7A9C7C505BC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E98CAB5-7E52-402A-99BA-7A9C7C505BC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E98CAB5-7E52-402A-99BA-7A9C7C505BC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E98CAB5-7E52-402A-99BA-7A9C7C505BC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEE7BC38-4EB6-41C4-B9A0-7B97497F6CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEE7BC38-4EB6-41C4-B9A0-7B97497F6CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEE7BC38-4EB6-41C4-B9A0-7B97497F6CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEE7BC38-4EB6-41C4-B9A0-7B97497F6CBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0DFD794F-F220-444F-90C8-710C57A67797} = {BA162EA3-E390-48A3-B2DF-E2C155841C67}
+		{6E98CAB5-7E52-402A-99BA-7A9C7C505BC0} = {61ECA0F0-E0B1-44BD-9E02-0116FA94A524}
+		{EEE7BC38-4EB6-41C4-B9A0-7B97497F6CBE} = {099C660F-9A62-42B9-956C-9BF1F14B8FDA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4DA72798-1C2F-49AD-82B7-5F2E595541A1}
+	EndGlobalSection
+EndGlobal
