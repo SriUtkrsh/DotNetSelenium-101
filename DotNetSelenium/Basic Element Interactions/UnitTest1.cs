@@ -8,7 +8,9 @@ using OpenQA.Selenium.Support.UI;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace DotNetSelenium
 {
-    /*  Total TestCases : 44
+    /*  
+     *  
+     *  Total TestCases : 44
      *  successfully Run : 13 +11=23
      *  revisit Tc's : 3+1=4
      *  Selectors Used : CssSelector,Xpath,Id,Linktext
@@ -564,7 +566,7 @@ namespace DotNetSelenium
 
         }
 
-        [Test]
+        [Test]   //Partial passing
         [TestCategory("Frames")]
         public void Nested_Frames()
         {
@@ -606,24 +608,75 @@ namespace DotNetSelenium
         public void Notification_Messages()
         {
             driver.FindElement(By.XPath("//*[@id=\"content\"]/ul/li[35]/a")).Click();
+            IWebElement triggerLink = driver.FindElement(By.LinkText("Click here"));
+
+            // Click the link to trigger the notification message
+            triggerLink.Click();
+
+            // Give the message some time to appear (this could be improved with explicit waits)
+            System.Threading.Thread.Sleep(2000); // This is a simple way to wait; use WebDriverWait in real cases
+
+            // Find the notification message element
+            IWebElement notificationMessage = driver.FindElement(By.Id("flash"));
+
+            // Get the text of the notification message
+            string messageText = notificationMessage.Text;
+
+            Console.WriteLine($"Notification message: {messageText}");
+
         }
 
         [Test]
         public void Redirect_Link()
         {
             driver.FindElement(By.XPath("//*[@id=\"content\"]/ul/li[36]/a")).Click();
+            driver.FindElement(By.Id("redirect")).Click();
         }
 
-        [Test]
+        [Test] // Not passing
         public void Secure_File_Download()
         {
             driver.FindElement(By.XPath("//*[@id=\"content\"]/ul/li[37]/a")).Click();
+
+            // URL with Basic Authentication
+            string username = "admin";
+            string password = "admin";
+            string url = "https://the-internet.herokuapp.com/download_secure_file"; // Change to the secure download URL
+
+            // Pass credentials in the URL for Basic Authentication
+             driver.Navigate().GoToUrl("https://username:password@the-internet.herokuapp.com");
+
+            // Navigate to the secure page
+           // driver.Navigate().GoToUrl(authUrl);
+            Thread.Sleep(5000);
+
+            // Locate the download link and click it
+            IWebElement downloadLink = driver.FindElement(By.XPath("//*[@id=\"content\"]/div/a[1]"));
+            downloadLink.Click();
+
+            // Wait for the download to complete (this is a basic example; you might want a more robust wait logic)
+            System.Threading.Thread.Sleep(5000);
+
+            Console.WriteLine("File downloaded successfully.");
         }
 
-        [Test]
+         [Test] //Nullexception error
         public void Shadowed_DOM()
         {
             driver.FindElement(By.XPath("//*[@id=\"content\"]/ul/li[38]/a")).Click();
+            // Find the Shadow Host
+            IWebElement shadowHost = driver.FindElement(By.XPath("//*[@id=\"content\"]/my-paragraph[1]/span"));
+
+            // Execute JavaScript to get the Shadow Root
+            IJavaScriptExecutor jsExecutor = (IJavaScriptExecutor)driver;
+            IWebElement shadowRoot = (IWebElement)jsExecutor.ExecuteScript("return arguments[0].shadowRoot", shadowHost);
+
+            // Find elements within the Shadow Root
+            IWebElement shadowElement = shadowRoot.FindElement(By.XPath("//*[@id=\"content\"]/my-paragraph[2]/ul/li[1]"));
+
+            // Interact with the Shadow DOM element
+            string text = shadowElement.Text;
+            System.Console.WriteLine(text);
         }
 
         [Test]
